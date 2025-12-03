@@ -1,0 +1,152 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  min-width: 300px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  transition: border-bottom-color 0.2s;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
+}
+
+.modal-body {
+  padding: 1rem 0;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.time-inputs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time-inputs input[type="number"] {
+  width: 60px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+  color: #333;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+/* [추가] ⭐️ 비활성화된 입력창 스타일 */
+.time-inputs input[type="number"]:disabled {
+  background-color: #eee;
+  color: #999;
+  cursor: not-allowed;
+  border-color: #ddd;
+}
+
+/* [추가] ⭐️ 경고 문구 스타일 */
+.warning-text {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  transition: border-top-color 0.2s;
+}
+
+.reset-app-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.save-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ⭐️ 다크 모드 덮어쓰기 */
+body.dark .modal-content {
+  background-color: #2c3440;
+}
+
+body.dark .modal-header {
+  border-bottom-color: #444;
+}
+
+body.dark .close-button {
+  color: #bbb;
+}
+
+body.dark .time-inputs input[type="number"] {
+  background-color: #333;
+  border-color: #555;
+  color: #eee;
+}
+
+/* [추가] ⭐️ 다크 모드 비활성화 스타일 */
+body.dark .time-inputs input[type="number"]:disabled {
+  background-color: #1a1f2c; /* 더 어두운 배경 */
+  color: #666;
+  border-color: #444;
+}
+
+body.dark .modal-footer {
+  border-top-color: #444;
+}
+
+body.dark .reset-app-button {
+  background-color: #cc3d3d;
+}

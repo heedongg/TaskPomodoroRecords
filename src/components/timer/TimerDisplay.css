@@ -1,0 +1,61 @@
+.timer-display {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+
+  /* conic-gradient (이전과 동일) */
+  background-image: conic-gradient(
+    #007bff var(--remaining-percent),
+    /* 파란색 (남은 시간) */ #f0f0f0 0% /* 회색 (지난 시간) */
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+
+  /* [핵심 수정] ⭐️
+    애니메이션 시간을 0.1초에서 1초로 늘립니다.
+    'linear'는 일정한 속도를 의미합니다.
+  */
+  transition: background-image 1s linear;
+}
+
+/* 안쪽 마스크 (이전과 동일) */
+.timer-inner-mask {
+  width: 230px; /* 250px - (10px * 2 링 두께) */
+  height: 230px;
+  border-radius: 50%;
+  background-color: white; /* ⭐️ 라이트 모드 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* ⭐️ 마스크의 배경색 전환은 0.2초로 유지 (다크 모드용) */
+  transition: background-color 0.2s;
+}
+
+/* 1시간 미만일 때 (MM:SS) (이전과 동일) */
+.timer-text-short {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* 1시간 이상일 때 (HH:MM:SS) (이전과 동일) */
+.timer-text-long {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* ⭐️ 다크 모드 덮어쓰기 (이전과 동일) */
+body.dark .timer-display {
+  background-image: conic-gradient(
+    #3b82f6 var(--remaining-percent),
+    /* 밝은 파랑 (남은 시간) */ #2c3440 0% /* 어두운 카드 배경 (지난 시간) */
+  );
+}
+
+body.dark .timer-inner-mask {
+  background-color: #10141c; /* '더 짙은' 배경색 */
+}

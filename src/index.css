@@ -1,0 +1,29 @@
+body {
+  /* 브라우저 기본 여백 제거 */
+  margin: 0;
+  padding: 0;
+
+  /* 기본 글꼴 설정 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  /* ⭐️ 라이트 모드 (기본) */
+  background-color: #ffffff;
+  color: #111111;
+
+  /* ⭐️ 부드러운 색상 전환 효과 */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* ⭐️ 다크 모드 */
+body.dark {
+  background-color: #10141c;
+  color: #eeeeee;
+}
+
+/* 모든 요소가 padding이나 border를 
+  크기 계산에 포함하도록 변경 (CSS 관리 편의성)
+*/
+* {
+  box-sizing: border-box;
+}

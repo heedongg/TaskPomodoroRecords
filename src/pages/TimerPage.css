@@ -1,0 +1,98 @@
+.timer-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.mode-indicator {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #888;
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.task-selector {
+  margin: 1.5rem 0;
+}
+
+.task-selector select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  min-width: 200px;
+  background-color: white;
+  border: 1px solid #ddd;
+  color: #333;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.task-selector select:disabled {
+  background-color: #eee;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 1rem;
+  /* ⭐️ 버튼이 여러 개가 될 수 있으므로 줄바꿈 허용 */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.control-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.control-button.start {
+  background-color: #28a745;
+  color: white;
+}
+.control-button.pause {
+  background-color: #ffc107;
+  color: black;
+}
+.control-button.reset {
+  background-color: #6c757d;
+  color: white;
+}
+.control-button.skip {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* STOP (Cancel) 버튼 스타일 */
+.control-button.cancel {
+  background-color: #dc3545; /* 빨간색 */
+  color: white;
+}
+
+/*  다크 모드 덮어쓰기 */
+body.dark .mode-indicator {
+  background-color: #333;
+  color: #aaa;
+}
+
+body.dark .task-selector select {
+  background-color: #333;
+  border-color: #555;
+  color: #eee;
+}
+
+body.dark .task-selector select:disabled {
+  background-color: #2c3440;
+  color: #666;
+}
+
+/* 다크 모드 STOP 버튼 */
+body.dark .control-button.cancel {
+  background-color: #c82333; /* 더 어두운 빨간색 */
+}

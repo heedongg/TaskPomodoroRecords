@@ -1,0 +1,45 @@
+.header {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* ⭐️ 부드러운 전환 효과 */
+  transition: border-bottom-color 0.2s;
+}
+
+.header-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.settings-icon {
+  /* <button> 기본 스타일 초기화 */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+
+  /* 아이콘 모양 */
+  font-size: 1.3rem;
+  color: #555;
+  line-height: 1;
+}
+
+.settings-icon:hover {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* ⭐️ 다크 모드 덮어쓰기 */
+body.dark .header {
+  border-bottom-color: #333; /* 어두운 경계선 */
+}
+
+body.dark .settings-icon {
+  color: #bbb; /* 밝은 아이콘 색상 */
+}
+
+body.dark .settings-icon:hover {
+  background-color: #333; /* 어두운 호버 배경 */
+}

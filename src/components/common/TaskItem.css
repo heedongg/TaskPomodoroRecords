@@ -1,0 +1,28 @@
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #f9f9f9; /* 라이트 모드 기준 카드 배경 */
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.task-name {
+  font-size: 1rem;
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ⭐️ 다크 모드 덮어쓰기 */
+body.dark .task-item {
+  background-color: #2c3440; /* 어두운 카드 배경 */
+}
