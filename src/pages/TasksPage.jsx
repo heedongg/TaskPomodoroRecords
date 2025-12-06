@@ -17,12 +17,21 @@ function TasksPage() {
     // 기본 동작 막기 form 태그는 전송 시 페이지를 새로고침하는 기본 성질이 있음.
     // SPA(Single Page Application)에서는 새로고침되면 데이터가 날아가므로 이를 preventDefault()를 통해 막음.
     e.preventDefault(); // 페이지 새로고침 방지
+    const nameToAdd = taskName.trim(); // 공백 제거한 이름
 
     // 유효성 검사
     // 빈 공백만 입력하거나 아무것도 입력하지 않았을 때를 방어.
-    if (taskName.trim() === "") {
+    if (nameToAdd === "") {
       alert("태스크 이름을 입력해주세요.");
       return;
+    }
+
+    // state.tasks 배열을 뒤져서, 똑같은 이름이 하나라도 있는지 확인(some)
+    const isDuplicate = state.tasks.some((task) => task.name === nameToAdd);
+
+    if (isDuplicate) {
+      alert("이미 존재하는 태스크 이름입니다.");
+      return; // 중복이면 여기서 함수를 끝내서 dispatch를 막음
     }
 
     // 액션 발송 (Dispatch)
