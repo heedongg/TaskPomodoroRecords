@@ -56,7 +56,6 @@
 
 ## 📂 프로젝트 구조
 
-    ```bash
     pomodoro-focus/
     ├── public/
     │   └── (favicon 등 정적 파일)
